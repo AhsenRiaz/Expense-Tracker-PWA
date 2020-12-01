@@ -2,8 +2,8 @@ import React from 'react'
 
 export const Header = () => {
     return (
-        <div>
-            <h1>Header</h1>
+        <div className = "heading">
+            <h2 >Quiz App PWA</h2>
         </div>
     )
 }

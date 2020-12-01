@@ -6,7 +6,7 @@ import AppReducer from "./AppReducer"
 
 const initialState: any = {
     transactions: [
-    
+
     ]
 }
 
@@ -14,31 +14,42 @@ const initialState: any = {
 export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }: any) => {
-// useReducer
-const [state, dispatch] = useReducer(AppReducer, initialState)
+    // useReducer
+    const [state, dispatch] = useReducer(AppReducer, initialState)
 
-// Actions
-// delete Transaction
-function deleteTransaction(id:number){
-    dispatch({
-        type: "DELETE_TRANSACTION",
-        payload:id
-    })
-}
+    const [trigger, setTrigger] = useState<boolean>(false)
 
-// add transaction
-function addTransaction(transaction:any){
-    dispatch({
-        type : "ADD_TRANSACTION",   
-        payload : transaction
-    })
-}
+    // function to set trigger
+    const checkSign = () => {
+
+        setTrigger(trigger ? false: true)
+
+    }
+
+    // Actions
+    // delete Transaction
+    function deleteTransaction(id: number) {
+        dispatch({
+            type: "DELETE_TRANSACTION",
+            payload: id
+        })
+    }
+
+    // add transaction
+    function addTransaction(transaction: any) {
+        dispatch({
+            type: "ADD_TRANSACTION",
+            payload: transaction
+        })
+    }
 
     return (
         <GlobalContext.Provider value={{
             transactions: state.transactions,
             deleteTransaction,
-            addTransaction
+            addTransaction,
+            trigger,
+            checkSign
 
         }}>
             { children}

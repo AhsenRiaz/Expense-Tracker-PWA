@@ -7,6 +7,41 @@
 * {
   box-sizing: border-box;
 }
+.balance{
+  margin-top: 1rem;
+  line-height: 0;
+  text-align: center;
+}
+
+.heading{
+  text-align: center;
+  background-color: #7494f1;
+  color: white;
+  border-radius: 5px;
+  padding: 6px ;
+
+}
+.history{
+  text-align: center;
+  background-color:#7494f1 ;
+  color: white;
+  padding-top: 6px;
+  border-radius: 5px;
+}
+
+.addtransaction{
+  text-align: center;
+  background-color: #7494f1;
+  color: white;
+  padding-top: 7px;
+  border-radius: 5px;
+
+}
+
+.App{
+  border: 1px solid gainsboro;
+  padding: 5px 5px ;
+}
 
 body {
   background-color: #f7f7f7;
@@ -19,10 +54,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-.container {
-  margin: 30px auto;
-  width: 350px;
-}
+
 
 h1 {
   letter-spacing: 1px;
@@ -41,9 +73,9 @@ h4 {
 }
 
 .inc-exp-container {
-  background-color: #fff;
+  background-color: rgb(96, 91, 238);
   box-shadow: var(--box-shadow);
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
@@ -69,7 +101,7 @@ h4 {
 }
 
 .money.minus {
-  color: #c0392b;
+  color: #99180a;
 }
 
 label {
@@ -99,6 +131,9 @@ input[type='number'] {
   padding: 10px;
   width: 100%;
 }
+.btn:hover{
+  background-color: #4e4efa;
+}
 
 .btn:focus,
 .delete-btn:focus {
@@ -109,10 +144,12 @@ input[type='number'] {
   list-style-type: none;
   padding: 0;
   margin-bottom: 40px;
+  width: 400px;
+  border: 1px solid gainsboro;
 }
 
 .list li {
-  background-color: #fff;
+  /* background-color: #fff; */
   box-shadow: var(--box-shadow);
   color: #333;
   display: flex;
@@ -124,10 +161,15 @@ input[type='number'] {
 
 .list li.plus {
   border-right: 5px solid #2ecc71;
+  background-color:#279756;
+  color: white;
+  
 }
 
 .list li.minus {
+  background-color:#f72b14 ;
   border-right: 5px solid #c0392b;
+  color: white;
 }
 
 .delete-btn {
@@ -146,6 +188,11 @@ input[type='number'] {
   transition: opacity 0.3s ease;
 }
 
+.delete-btn:hover{
+  background-color: gold;
+  color: black;
+}
+
 .list li:hover .delete-btn {
   opacity: 1;
 }
@@ -154,4 +201,10 @@ input[type='number'] {
   .container {
     width: 300px;
   }
+}
+
+input {
+  border-radius: 5px !important;
+
+  background-color: gainsboro;
 }
